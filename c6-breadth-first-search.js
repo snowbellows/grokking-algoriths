@@ -16,12 +16,15 @@ function breadthFirstSearch(personIsSeller) {
   while (searchQueue.length > 0) {
     const [person, ...rest] = searchQueue;
     if (!searched.includes(person)) {
+      searched.push(person);
       if (personIsSeller(person)) {
         console.log(`${person} is a mango seller!`);
         return true;
       } else {
         searchQueue = [...rest, ...graph.get(person)];
       }
+    } else {
+      searchQueue = rest;
     }
   }
   return false;
