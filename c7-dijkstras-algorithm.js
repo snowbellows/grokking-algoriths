@@ -32,13 +32,13 @@ let node = findLowestCostNode(costs);
 while (node) {
   const cost = costs[node];
   const neighbours = graph[node];
-  for (const n in neighbours) {
+  Object.keys(neighbours).forEach((n) => {
     const newCost = cost + neighbours[n];
     if (costs[n] > newCost) {
       costs[n] = newCost;
       parents[n] = node;
     }
-  }
+  });
   processed.push(node);
   node = findLowestCostNode(costs);
 }
@@ -46,13 +46,13 @@ while (node) {
 function findLowestCostNode(costs) {
   let lowestCost = Infinity;
   let lowestCostNode = undefined;
-  for (const node in costs) {
+  Object.keys(costs).forEach((node) => {
     const cost = costs[node];
     if (cost < lowestCost && !processed.includes(node)) {
       lowestCost = cost;
       lowestCostNode = node;
     }
-  }
+  });
   return lowestCostNode;
 }
 
