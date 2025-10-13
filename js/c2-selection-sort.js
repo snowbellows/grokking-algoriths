@@ -13,7 +13,6 @@ function findSmallest(arr) {
 
 function selectionSort(arr) {
   let newArr = [];
-  let i = 0;
   while (0 < arr.length) {
     const smallestIndex = findSmallest(arr);
     newArr.push(arr[smallestIndex]);
