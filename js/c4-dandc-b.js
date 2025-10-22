@@ -4,7 +4,7 @@ function quicksort(arr) {
   }
   const pivot = arr[0];
   const less = arr.slice(1).filter((x) => x <= pivot);
-  const greater = arr.slice(1).filter((x) => x >= pivot);
+  const greater = arr.slice(1).filter((x) => x > pivot);
   return [...quicksort(less), pivot, ...quicksort(greater)];
 }
 
