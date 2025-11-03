@@ -9,9 +9,6 @@ stations["kfive"] = set(["ca", "az"])
 
 final_stations = set()
 
-best_station = None
-states_covered = set()
-
 while states_needed:
     best_station = None
     states_covered = set()
